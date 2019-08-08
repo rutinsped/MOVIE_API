@@ -3,6 +3,20 @@ const express = require('express'),
 
 const app = express();
 
+let top10Movies = [ {
+  title : 'Harry Potter and the Sorcerer\'s Stone',
+  director : 'J.K. Rowling'
+  },
+  {
+  title : 'Lord of the Rings',
+  director : 'J.R.R. Tolkien'
+  },
+  {
+  title : 'Twilight',
+  director : 'Stephanie Meyer'
+  }
+  ];
+
 app.use(morgan('common'));
 
 // GET requests
