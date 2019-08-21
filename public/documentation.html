@@ -11,7 +11,117 @@
 <header>
     <h1 class="h1">Cinesider</h1>
     <h2 class="h2" >The Movie App</h2>
-</header>
+  </header>
+  <table>
+    <tr>
+      <th style="font-weight: bold;">Business logic</th>
+      <th style="font-weight: bold;">URL</th>
+      <th style="font-weight: bold;">HTTP Method</th>
+      <th style="font-weight: bold;">Request Body Data Format</th>
+      <th style="font-weight: bold;">Response Body Data Format</th>
+    </tr>
+    <tr>
+      <th>Return a list of all movies to the user</th>
+      <th>/movies</th>
+      <th>GET</th>
+      <th>NONE</th>
+      <th>A JSON object holding data on all movies</th>
+    </tr>
+    <tr>
+      <th>Return a movie by a parameter to the user</th>
+      <th>/movieRegisters</th>
+      <th>GET</th>
+      <th>NONE</th>
+      <th>A JSON object holding data on a specific movie</th>
+    </tr>
+    <tr>
+      <th>Return data about a genre (description) by name/title (e.g., “Romance”)</th>
+      <th>/movies/[]/genre</th>
+      <th>GET</th>
+      <th>NONE</th>
+      <th>Return text of the genre based of the movie</th>
+    </tr>
+    <tr>
+      <th>Return director and it's data on a movie (information (bio, birth year, death year) by name)</th>
+      <th>/movies/[movie]/director</th>
+      <th>GET</th>
+      <th>NONE</th>
+      <th>Return text of a director of a movie </th>
+    </tr>
+      <tr>
+       <th>Allow new users to register</th>
+       <th>/movieRegisters</th>
+       <th>POST</th>
+       <th align="left">Json object holding data about the user to add structured like: <br>
+         { <br>
+         "username": "username", *string*<br>
+         "email": "email", *string*<br>
+         "name": "name", *string*<br>
+         "interest": "interest", *string*<br>
+         }<br>
+        </th>
+        </tr>
+     <tr>
+        <th>Return a list of all users</th>
+        <th>/movieRegisters</th>
+        <th>GET</th>
+        <th>none</th>
+        <th align="left">A JSON object holding information based off users
+          <br>
+            { <br>
+              username: "username"<br>
+              email: "email"<br>
+              name: "name"<br>
+              interest: "interest"<br>
+            }<br></th>
+      </tr>
+      <tr>
+         <th>Return a single user's information</th>
+         <th>/movieRegisters/[username]</th>
+         <th>GET</th>
+         <th>none</th>
+         <th align="left">A JSON object holding information on user
+           <br>
+             { <br>
+              username: "username"<br>
+              email: "email"<br>
+              name: "name"<br>
+              interest: "interest"<br>
+             }<br></th>
+       </tr>
+     <tr>
+        <th>Allow users to update their user info (username, name, email, interest)</th>
+        <th>/movieRegisters/[username]</th>
+        <th>PUT</th>
+        <th align='left'>
+          { <br>
+            username: "username"<br>
+            email: "email"<br>
+            name: "name"<br>
+            interest: "interest"<br>
+         </th>
+         <tr>
+        <th>Allow users to add a movie to their list of favorites</th>
+        <th>/movieRgisters/[username]/favoriteMovies/[movies]</th>
+        <th>PUT</th>
+        <th>none</th>
+        <th>A message indicating the movie was successfully added</th>
+      </tr>
+      <tr>
+        <th>Allow users to remove a movie from their list of favorites</th>
+        <th>/movieRegisters/[username]/favoriteMovies/[movies]</th>
+        <th>DELETE</th>
+        <th>none</th>
+        <th>A message indicating the movie was successfully removed</th>
+      </tr>
+      <tr>
+        <th>Allow existing users to deregister</th>
+        <th>/movieRegisters/[username]</th>
+        <th>DELETE</th>
+        <th>None</th>
+        <th>A text message indicating the user was successfully removed</th>
+      </tr>
+  </table>
 <footer>
 </footer>
 </body>
