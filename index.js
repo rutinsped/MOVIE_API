@@ -3,8 +3,7 @@ const express = require("express"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
   uuid = require("uuid");
-  var docs = require("express-mongoose-docs");
-
+  
 const app = express();
 
 app.use(morgan("common"));
@@ -12,8 +11,6 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 
 app.use(express.static("public"));
-
-docs(app, mongoose); // 2nd param is optional
 
 let Movies = [
   {
