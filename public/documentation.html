@@ -28,29 +28,29 @@
       <th>A JSON object holding data on all movies</th>
     </tr>
     <tr>
-      <th>Return a movie by a parameter to the user</th>
-      <th>/movieRegisters</th>
+      <th>Return a movie by title to the user</th>
+      <th>/movies/title</th>
       <th>GET</th>
       <th>NONE</th>
       <th>A JSON object holding data on a specific movie</th>
     </tr>
     <tr>
-      <th>Return data about a genre (description) by name/title (e.g., “Romance”)</th>
-      <th>/movies/[]/genre</th>
+      <th>Return data about a genre (description) by genre (e.g., “Romance”)</th>
+      <th>/genres/genre</th>
       <th>GET</th>
       <th>NONE</th>
-      <th>Return text of the genre based of the movie</th>
+      <th>Return text of the genre based of the genres</th>
     </tr>
     <tr>
-      <th>Return director and it's data on a movie (information (bio, birth year, death year) by name)</th>
-      <th>/movies/[movie]/director</th>
+      <th>Return director and it's data about he/she (information (bio, birth year, death year) by name)</th>
+      <th>/directors/director</th>
       <th>GET</th>
       <th>NONE</th>
       <th>Return text of a director of a movie </th>
     </tr>
       <tr>
        <th>Allow new users to register</th>
-       <th>/movieRegisters</th>
+       <th>/users</th>
        <th>POST</th>
        <th align="left">Json object holding data about the user to add structured like: <br>
          { <br>
@@ -63,7 +63,7 @@
         </tr>
      <tr>
         <th>Return a list of all users</th>
-        <th>/movieRegisters</th>
+        <th>/users</th>
         <th>GET</th>
         <th>none</th>
         <th align="left">A JSON object holding information based off users
@@ -77,7 +77,7 @@
       </tr>
       <tr>
          <th>Return a single user's information</th>
-         <th>/movieRegisters/[username]</th>
+         <th>/users/user</th>
          <th>GET</th>
          <th>none</th>
          <th align="left">A JSON object holding information on user
@@ -91,7 +91,7 @@
        </tr>
      <tr>
         <th>Allow users to update their user info (username, name, email, interest)</th>
-        <th>/movieRegisters/[username]</th>
+        <th>/users/[id]</th>
         <th>PUT</th>
         <th align='left'>
           { <br>
@@ -102,21 +102,21 @@
          </th>
          <tr>
         <th>Allow users to add a movie to their list of favorites</th>
-        <th>/movieRgisters/[username]/favoriteMovies/[movies]</th>
+        <th>/users/[id]</th>
         <th>PUT</th>
         <th>none</th>
         <th>A message indicating the movie was successfully added</th>
       </tr>
       <tr>
         <th>Allow users to remove a movie from their list of favorites</th>
-        <th>/movieRegisters/[username]/favoriteMovies/[movies]</th>
+        <th>/users/[title]</th>
         <th>DELETE</th>
         <th>none</th>
         <th>A message indicating the movie was successfully removed</th>
       </tr>
       <tr>
         <th>Allow existing users to deregister</th>
-        <th>/movieRegisters/[username]</th>
+        <th>/users/[username]</th>
         <th>DELETE</th>
         <th>None</th>
         <th>A text message indicating the user was successfully removed</th>
