@@ -36,14 +36,14 @@
     </tr>
     <tr>
       <th>Return data about a genre (description) by genre (e.g., “Romance”)</th>
-      <th>/genres/genre</th>
+      <th>/movies/genre</th>
       <th>GET</th>
       <th>NONE</th>
       <th>Return text of the genre based of the genres</th>
     </tr>
     <tr>
       <th>Return director and it's data about he/she (information (bio, birth year, death year) by name)</th>
-      <th>/directors/director</th>
+      <th>/movies/director</th>
       <th>GET</th>
       <th>NONE</th>
       <th>Return text of a director of a movie </th>
@@ -55,9 +55,11 @@
        <th align="left">Json object holding data about the user to add structured like: <br>
          { <br>
          "username": "username", *string*<br>
-         "email": "email", *string*<br>
          "name": "name", *string*<br>
-         "interest": "interest", *string*<br>
+         "password": "password", *string*<br>
+         "email": "email", *string*<br>
+         "birth_date": "birth_date", *data*<br>
+         "favorite_movie": "favorite_movie", *array*<br>
          }<br>
         </th>
         </tr>
@@ -67,13 +69,14 @@
         <th>GET</th>
         <th>none</th>
         <th align="left">A JSON object holding information based off users
-          <br>
-            { <br>
-              username: "username"<br>
-              email: "email"<br>
-              name: "name"<br>
-              interest: "interest"<br>
-            }<br></th>
+          { <br>
+            "username": "username", *string*<br>
+            "name": "name", *string*<br>
+            "password": "password", *string*<br>
+            "email": "email", *string*<br>
+            "birth_date": "birth_date", *data*<br>
+            "favorite_movie": "favorite_movie", *array*<br>
+          }<br></th>
       </tr>
       <tr>
          <th>Return a single user's information</th>
@@ -82,12 +85,14 @@
          <th>none</th>
          <th align="left">A JSON object holding information on user
            <br>
-             { <br>
-              username: "username"<br>
-              email: "email"<br>
-              name: "name"<br>
-              interest: "interest"<br>
-             }<br></th>
+           { <br>
+            "username": "username", *string*<br>
+            "name": "name", *string*<br>
+            "password": "password", *string*<br>
+            "email": "email", *string*<br>
+            "birth_date": "birth_date", *data*<br>
+            "favorite_movie": "favorite_movie", *array*<br>
+          }<br></th>
        </tr>
      <tr>
         <th>Allow users to update their user info (username, name, email, interest)</th>
@@ -95,11 +100,13 @@
         <th>PUT</th>
         <th align='left'>
           { <br>
-            username: "username"<br>
-            email: "email"<br>
-            name: "name"<br>
-            interest: "interest"<br>
-         </th>
+            "username": "username", *string*<br>
+            "name": "name", *string*<br>
+            "password": "password", *string*<br>
+            "email": "email", *string*<br>
+            "birth_date": "birth_date", *data*<br>
+            "favorite_movie": "favorite_movie", *array*<br>
+          }<br></th>
          <tr>
         <th>Allow users to add a movie to their list of favorites</th>
         <th>/users/[id]</th>
