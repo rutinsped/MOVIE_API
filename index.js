@@ -4,7 +4,7 @@ morgan = require("morgan"),
 bodyParser = require("body-parser"),
 uuid = require("uuid");
 const mongoose = require('mongoose');
-const Models = require('./model.js');
+const Models = require('./models.js');
 const Movies = Models.Movie;
 const Users = Models.User;    
 const app = express();
@@ -17,6 +17,11 @@ mongoose.connect('mongodb://localhost:27017/Movies' ,{useNewUrlParser: true,
 app.use(morgan("common"));
 
 app.use(bodyParser.json());
+
+var auth = require('./auth')(app);
+
+const passport = require('passport');
+require('./passport');
 
 app.use(express.static("public"));
 
