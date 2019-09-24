@@ -6,7 +6,9 @@ uuid = require("uuid");
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 const Movies = Models.Movie;
-const Users = Models.User;    
+const Users = Models.User;
+const cors = require('cors');
+const { check, validationResult } = require('express-validator');    
 const app = express();
 
 mongoose.connect('mongodb://localhost:27017/Movies' ,{useNewUrlParser: true,
@@ -17,6 +19,21 @@ mongoose.connect('mongodb://localhost:27017/Movies' ,{useNewUrlParser: true,
 app.use(morgan("common"));
 
 app.use(bodyParser.json());
+
+app.use(cors());
+
+var allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+
+app.use(cors({
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){ // If a specific origin isn’t found on the list of allowed origins
+      var message = 'The CORS policy for this application doesn’t allow access from origin ' + origin;
+      return callback(new Error(message ), false);
+    }
+    return callback(null, true);
+  }
+}));
 
 var auth = require('./auth')(app);
 
@@ -129,7 +146,19 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }),fun
   });
 });
 
-app.post('/users', function(req, res) {
+app.post('/users',
+[ check('Username', 'Username is required').isLength({min: 5}),
+  check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+  check('Password', 'Password is required').not().isEmpty(),
+  check('Email', 'Email does not appear to be valid').isEmail() ],
+  (req, res) => {
+
+  var errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+
+  var hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username : req.body.Username })
   .then(function(user) {
     if (user) {
@@ -139,7 +168,7 @@ app.post('/users', function(req, res) {
       .create({
         Username: req.body.Username,
         Name: req.body.Name,
-        Password: req.body.Password,
+        Password: hashedPassword,
         Email: req.body.Email,
         Birth_date: req.body.Birth_date,
         Favorit_movie: req.body.Favorit_movie
@@ -250,6 +279,9 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
 });
 
 
-app.listen(8080);
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+console.log("Listening on Port 3000");
+});
 
 console.log("It's working!");
