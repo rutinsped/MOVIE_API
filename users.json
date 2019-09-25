@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5d8266fa4333c2d852b67995"},"Username":"coushon","Name":"Karen Foster","Password":"ieD3eiRoh","Email":"karenfoster@teleworm.us","Birth_date":"1970-11-15","Favorit_movie":[]}
+{"_id":{"$oid":"5d8266fa4333c2d852b67996"},"Username":"Whoust","Name":"Jeana Weir","Password":"xah7ooNgohd","Email":"jeana.weir@jourrapide.com","Birth_date":"1989-10-02","Favorit_movie":[]}
+{"_id":{"$oid":"5d8266fa4333c2d852b67997"},"Username":"boares2","Name":"Henry Wood","Password":"hywood","Email":"henrywood@gmail.com","Birth_date":"1970-02-26","Favorit_movie":[]}
+{"_id":{"$oid":"5d8266fa4333c2d852b67998"},"Username":"dennyboy","Name":"Dennis Hawkins","Password":"jdrunt","Email":"dny.haw@gmail.com","Birth_date":"1992-07-11","Favorit_movie":[{"$oid":"5d8262852e9422a0c643b637"},{"$oid":"5d8262852e9422a0c643b640"}]}
+{"_id":{"$oid":"5d87b1e6c9f9d9025d935cab"},"Favorit_movie":[],"Username":"johndoe","Name":"John Doe","Password":"1234pass","Email":"john.doe@yahoo.com","Birth_date":{"$date":"1967-05-03T00:00:00.000Z"},"__v":0}

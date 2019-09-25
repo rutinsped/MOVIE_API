@@ -11,7 +11,7 @@ const cors = require('cors');
 const { check, validationResult } = require('express-validator');    
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/Movies' ,{useNewUrlParser: true,
+mongoose.connect('mongodb+srv://rutinsped:1Rutinsped5@cinesider-uci2n.mongodb.net/test?retryWrites=true&w=major' ,{useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false
   });
