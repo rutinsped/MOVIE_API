@@ -12,7 +12,6 @@ const { check, validationResult } = require('express-validator');
 const app = express();
 
 mongoose.connect('mongodb+srv://rutinsped:1Rutinsped5@cinesider-uci2n.mongodb.net/Movies?retryWrites=true&w=majority', { useNewUrlParser: true });
-  
 
 app.use(morgan("common"));
 
