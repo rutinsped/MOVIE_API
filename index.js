@@ -251,6 +251,9 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
   });
 });
 
+app.get('/', function(req, res) {
+  res.send('Welcome to the Cinesider');
+});
 
 var port = process.env.PORT || 3000;
 app.listen(port, "0.0.0.0", function() {
