@@ -120,7 +120,7 @@ app.post("/movies", passport.authenticate('jwt', { session: false }), (req, res,
 
 // Post, Put, Delete - Create, Update, Delete with Users
 
-app.get('/users', function(req, res) {
+app.get('/users', passport.authenticate('jwt', { session: false }), function(req, res) {
 
   Users.find()
   .then(function(users) {
