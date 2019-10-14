@@ -17,9 +17,9 @@ app.use(morgan("common"));
 
 app.use(bodyParser.json());
 
-app.use(cors(*));
+app.use(cors());
 
-var allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+var allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234'];
 
 app.use(cors({
   origin: function(origin, callback){
