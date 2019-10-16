@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-var allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'http://localhost:1234'];
+var allowedOrigins = ['*'];
 
 app.use(cors({
   origin: function(origin, callback){
@@ -77,7 +77,7 @@ app.get('/movies/genres/:Name', passport.authenticate('jwt', { session: false })
 });
 
 app.get('/movies/genres/:Title', passport.authenticate('jwt', { session: false }), function(req, res) {
-  Movies.findOne({Title: req.params.Title})
+  Movies.findOne({'Genre.Title': req.params.Title})
   .then(function(movie){
     if(movie){
       res.status(201).send("Movie with the title : " + movie.Title + " is  a " + movie.Genre.Name + " ." );
