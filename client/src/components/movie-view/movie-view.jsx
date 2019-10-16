@@ -9,6 +9,14 @@ export class MovieView extends React.Component {
   }
 
   render() {
+    return (
+      <div className="my-flix">
+        <Button/>
+      </div>
+    );
+  }
+
+  render() {
     const { movie } = this.props;
 
     if (!movie) return null;
