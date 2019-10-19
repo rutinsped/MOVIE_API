@@ -8,14 +8,7 @@ export class MovieView extends React.Component {
     this.state = {};
   }
 
-  render() {
-    return (
-      <div className="my-flix">
-        <Button/>
-      </div>
-    );
-  }
-
+  
   render() {
     const { movie } = this.props;
 
@@ -41,6 +34,10 @@ export class MovieView extends React.Component {
           <div className="value">{movie.Director.Name}</div>
         </div>
        </div>
+
+        <div className="my-flix">
+          <button>click me</button>
+        </div>
 
 
     );
