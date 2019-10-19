@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-var allowedOrigins = ['*'];
+var allowedOrigins = ['http://cinesider.herokuapp.com/', 'https://cinesider.herokuapp.com/', 'http://localhost:3000']
 
 app.use(cors({
   origin: function(origin, callback){
