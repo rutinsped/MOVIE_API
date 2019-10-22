@@ -16,16 +16,7 @@ export class MainView extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('<my-api-endpoint/movies>')
-      .then(response => {
-        // Assign the result to the state
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    /* ... */
   }
 
   onMovieClick(movie) {
@@ -43,9 +34,13 @@ export class MainView extends React.Component {
 
     return (
      <div className="main-view">
-        { movies.map(movie => (
+      {selectedMovie
+         ? <MovieView movie={selectedMovie}/>
+         : movies.map(movie => (
            <MovieCard key={movie._id} movie={movie} onClick={movie => this.onMovieClick(movie)}/>
-         ))}
-        </div>
+         ))
+      }
+     </div>
     );
   }
+}
