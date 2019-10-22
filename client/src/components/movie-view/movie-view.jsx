@@ -35,11 +35,6 @@ export class MovieView extends React.Component {
         </div>
        </div>
 
-        <div className="my-flix">
-          <button>click me</button>
-        </div>
-
-
-    );
+     );
   }
 }
