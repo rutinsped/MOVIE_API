@@ -10,12 +10,16 @@ export class MovieView extends React.Component {
 
   
   render() {
-    const { movie } = this.props;
+    const { movie, onClick } = this.props;
 
     if (!movie) return null;
 
     return (
        <div className="movie-view">
+         <div 
+          className="movie-go-back"
+          onClick={() => onClick()}
+        >Back to all movies</div>
         <div className="movie-title">
           <div className="label">Title</div>
           <div className="value">{movie.Title}</div>
