@@ -8,7 +8,7 @@ import { MainView } from './components/main-view/main-view';
 import './index.scss';
 
 // Main component (will eventually use all the others)
-class cinesider extends React.Component {
+class cinesiderApplication extends React.Component {
   render() {
     return <MainView/>;
   }
@@ -18,4 +18,4 @@ class cinesider extends React.Component {
 const container = document.getElementsByClassName('app-container')[0];
 
 // Tell React to render our app in the root DOM element
-ReactDOM.render(React.createElement(cinesider), container);
+ReactDOM.render(React.createElement(cinesiderApplication), container);
