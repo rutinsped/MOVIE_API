@@ -17,7 +17,7 @@ export class MovieView extends React.Component {
     return (
        <div className="movie-view">
          <div 
-          className="movie-go-back"
+          className="backtomovie"
           onClick={() => onClick()}
         >Back to all movies</div>
         <div className="movie-title">
