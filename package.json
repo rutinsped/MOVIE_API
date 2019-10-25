@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/rutinsped/movie_api/issues"
   },
-  "homepage": "https://github.com/rutinsped/movie_api#readme",
+  "homepage": "https://cinesider.herokuapp.com/",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
