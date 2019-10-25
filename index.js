@@ -37,7 +37,16 @@ var auth = require('./auth')(app);
 const passport = require('passport');
 require('./passport');
 
-app.use(express.static("public"));
+app.use(express.static('public', {
+  etag: true, // Just being explicit about the default.
+  lastModified: true,  // Just being explicit about the default.
+  setHeaders: (res, path) => {
+    if (path.endsWith('.html')) {
+      // All of the project's HTML files end in .html
+      res.setHeader('Cache-Control', 'no-cache');
+    }
+  },
+}));
 
 
 // Get movies and details
