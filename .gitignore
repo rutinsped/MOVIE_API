@@ -1,8 +1,8 @@
-/node_modules/
-/standard/
-/module.exports/
-/extends#003A/
-/.eslintrc.js#003A/
-/.eslintrc/
-/.cache/
-/..cache/
+node_modules
+standard
+module.exports
+extends#003A
+.eslintrc.js#003A
+.eslintrc
+.cache
+..cache
