@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/rutinsped/movie_api/issues"
   },
-  "homepage": "https://cinesider.herokuapp.com/",
+  "homepage": "https://cinesider.herokuapp.com/movies",
   "dependencies": {
     "axios": "^0.19.0",
     "react": "^16.10.2",
