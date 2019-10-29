@@ -33897,6 +33897,13 @@ function (_React$Component) {
     _classCallCheck(this, MainView);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MainView).call(this));
+
+    _this.goBack = function () {
+      _this.setState({
+        selectedMovie: null
+      });
+    };
+
     _this.state = {
       movies: null,
       selectedMovie: null
@@ -33921,22 +33928,14 @@ function (_React$Component) {
   }, {
     key: "onMovieClick",
     value: function onMovieClick(movie) {
-      var _this3 = this;
-
       this.setState({
         selectedMovie: movie
       });
-
-      goBack = function goBack() {
-        _this3.setState({
-          selectedMovie: null
-        });
-      };
     }
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       var _this$state = this.state,
           movies = _this$state.movies,
@@ -33956,7 +33955,7 @@ function (_React$Component) {
           key: movie._id,
           movie: movie,
           onClick: function onClick(movie) {
-            return _this4.onMovieClick(movie);
+            return _this3.onMovieClick(movie);
           }
         });
       }));
@@ -34124,7 +34123,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56278" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56359" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
