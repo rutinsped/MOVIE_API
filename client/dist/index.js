@@ -33806,11 +33806,18 @@ function (_React$Component) {
   _createClass(MovieView, [{
     key: "render",
     value: function render() {
-      var movie = this.props.movie;
+      var _this$props = this.props,
+          movie = _this$props.movie,
+          _onClick = _this$props.onClick;
       if (!movie) return null;
       return _react.default.createElement("div", {
         className: "movie-view"
       }, _react.default.createElement("div", {
+        className: "backtomovie",
+        onClick: function onClick() {
+          return _onClick();
+        }
+      }, "Back to all movies"), _react.default.createElement("div", {
         className: "movie-title"
       }, _react.default.createElement("div", {
         className: "label"
@@ -33902,7 +33909,16 @@ function (_React$Component) {
   _createClass(MainView, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      /* ... */
+      var _this2 = this;
+
+      _axios.default.get('<https://cinesider.herokuapp.com/movies>').then(function (response) {
+        // Assign the result to the state
+        _this2.setState({
+          movies: response.data
+        });
+      }).catch(function (error) {
+        console.log(error);
+      });
     }
   }, {
     key: "onMovieClick",
@@ -33914,7 +33930,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _this$state = this.state,
           movies = _this$state.movies,
@@ -33932,7 +33948,7 @@ function (_React$Component) {
           key: movie._id,
           movie: movie,
           onClick: function onClick(movie) {
-            return _this2.onMovieClick(movie);
+            return _this3.onMovieClick(movie);
           }
         });
       }));
@@ -34047,31 +34063,31 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 // Main component (will eventually use all the others)
-var Cinesider =
+var movie_apiApplication =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Cinesider, _React$Component);
+  _inherits(movie_apiApplication, _React$Component);
 
-  function Cinesider() {
-    _classCallCheck(this, Cinesider);
+  function movie_apiApplication() {
+    _classCallCheck(this, movie_apiApplication);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Cinesider).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(movie_apiApplication).apply(this, arguments));
   }
 
-  _createClass(Cinesider, [{
+  _createClass(movie_apiApplication, [{
     key: "render",
     value: function render() {
       return _react.default.createElement(_mainView.MainView, null);
     }
   }]);
 
-  return Cinesider;
+  return movie_apiApplication;
 }(_react.default.Component); // Find the root of our app
 
 
 var container = document.getElementsByClassName('app-container')[0]; // Tell React to render our app in the root DOM element
 
-_reactDom.default.render(_react.default.createElement(Cinesider), container);
+_reactDom.default.render(_react.default.createElement(movie_apiApplication), container);
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./index.scss":"index.scss"}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -34100,7 +34116,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53196" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55275" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

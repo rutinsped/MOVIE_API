@@ -16,7 +16,7 @@ export class MainView extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('<https://cinesider.herokuapp.com/movies>')
+    axios.get('https://cinesider.herokuapp.com/movies')
       .then(response => {
         // Assign the result to the state
         this.setState({
@@ -37,6 +37,7 @@ export class MainView extends React.Component {
 
   render() {
     const { movies, selectedMovie } = this.state;
+    console.log(movies)
 
     // Before the movies have been loaded
     if (!movies) return <div className="main-view"/>;
