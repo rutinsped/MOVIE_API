@@ -33911,7 +33911,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios.default.get('<https://cinesider.herokuapp.com/movies>').then(function (response) {
+      _axios.default.get('https://cinesider.herokuapp.com/movies').then(function (response) {
         // Assign the result to the state
         _this2.setState({
           movies: response.data
@@ -33934,7 +33934,8 @@ function (_React$Component) {
 
       var _this$state = this.state,
           movies = _this$state.movies,
-          selectedMovie = _this$state.selectedMovie; // Before the movies have been loaded
+          selectedMovie = _this$state.selectedMovie;
+      console.log(movies); // Before the movies have been loaded
 
       if (!movies) return _react.default.createElement("div", {
         className: "main-view"
@@ -34116,7 +34117,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55335" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55747" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
