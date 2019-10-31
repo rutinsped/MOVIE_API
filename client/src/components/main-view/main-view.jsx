@@ -35,7 +35,9 @@ export class MainView extends React.Component {
   }
 
   goBack = () => {
-    this.setState({ selectedMovie: null })
+    this.setState({ 
+      selectedMovie: null 
+    })
   }
 
 
