@@ -33812,10 +33812,7 @@ function (_React$Component) {
       if (!movie) return null;
       return _react.default.createElement("div", {
         className: "movie-view"
-      }, _react.default.createElement("button", {
-        className: "backtomovie",
-        onClick: onClick
-      }, "Back to all movies"), _react.default.createElement("div", {
+      }, _react.default.createElement("div", {
         className: "movie-title"
       }, _react.default.createElement("div", {
         className: "label"
@@ -33842,7 +33839,10 @@ function (_React$Component) {
         className: "label"
       }, "Director"), _react.default.createElement("div", {
         className: "value"
-      }, movie.Director.Name)));
+      }, movie.Director.Name)), _react.default.createElement("button", {
+        className: "backtomovie",
+        onClick: onClick
+      }, "Back to all movies"));
     }
   }]);
 
@@ -34123,7 +34123,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59397" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59743" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
