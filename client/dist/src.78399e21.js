@@ -35381,7 +35381,7 @@ function (_React$Component) {
           _onClick = _this$props.onClick;
       return _react.default.createElement(_Card.default, {
         style: {
-          width: '100%'
+          width: '50%'
         }
       }, _react.default.createElement(_Card.default.Img, {
         variant: "top",
