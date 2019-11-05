@@ -34653,11 +34653,14 @@ function LoginView(props) {
       password = _useState4[0],
       setPassword = _useState4[1];
 
-  var handleSubmit = function handleSubmit() {
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
     console.log(username, password);
     /* Send a request to the server for authentication */
 
     /* then call props.onLoggedIn(username) */
+
+    props.onLoggedIn(username);
   };
 
   return _react.default.createElement("form", null, _react.default.createElement("label", null, "Username:", _react.default.createElement("input", {
