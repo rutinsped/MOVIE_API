@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './login-view.scss';
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  import Container from 'react-bootstrap/Container';
-  import Row from 'react-bootstrap/Row';
-  import Col from 'react-bootstrap/Col';
-  import Spinner from 'react-bootstrap/Spinner';
-  import Nav from 'react-bootstrap/Nav';
-  import Navbar from 'react-bootstrap/Navbar';
-  import Form from 'react-bootstrap/Form';
-  import Button from 'react-bootstrap/Button';
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(username, password);
