@@ -39042,6 +39042,7 @@ function (_React$Component) {
         variant: "top",
         src: movie.ImagePath
       }), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, movie.Title), _react.default.createElement(_Card.default.Text, null, movie.Description), _react.default.createElement(_Button.default, {
+        className: "outline-primary",
         onClick: function onClick() {
           return _onClick(movie);
         },
