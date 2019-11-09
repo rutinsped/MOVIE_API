@@ -1,7 +1,6 @@
 // client/src/index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 
 import { MainView } from './components/main-view/main-view';
 
