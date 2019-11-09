@@ -11,7 +11,7 @@ $lines-to-show: 3;
   font-size: $font-size;
   line-height: $line-height;
   -webkit-line-clamp: $lines-to-show;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   overflow: hidden;
   text-overflow: ellipsis;
 }
