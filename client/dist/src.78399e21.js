@@ -39331,13 +39331,16 @@ function (_React$Component) {
         movie: selectedMovie,
         onClick: this.goBack
       }) : movies.map(function (movie) {
-        return _react.default.createElement(_movieCard.MovieCard, {
+        return _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
+          xs: 6,
+          md: 4
+        }, _react.default.createElement(_movieCard.MovieCard, {
           key: movie._id,
           movie: movie,
           onClick: function onClick(movie) {
             return _this3.onMovieClick(movie);
           }
-        });
+        })));
       }));
     }
   }]);
