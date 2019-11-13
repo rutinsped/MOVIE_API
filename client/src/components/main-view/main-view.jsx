@@ -1,20 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@rutinsped 
-1
-00rutinsped/movie_api
- Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security Insights Settings
-movie_api/client/src/components/main-view/main-view.jsx
-@rutinsped rutinsped test
-3dfdbf7 4 days ago
-86 lines (70 sloc)  2.03 KB
-  
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
