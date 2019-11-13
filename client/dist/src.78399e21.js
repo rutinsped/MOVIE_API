@@ -38838,6 +38838,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+_react.default.createElement(Form, null, _react.default.createElement(Form.Group, {
+  controlId: "formBasicEmail"
+}, _react.default.createElement(Form.Label, null, "Email address"), _react.default.createElement(Form.Control, {
+  type: "email",
+  placeholder: "Enter email"
+}), _react.default.createElement(Form.Text, {
+  className: "text-muted"
+}, "We'll never share your email with anyone else.")), _react.default.createElement(Form.Group, {
+  controlId: "formBasicPassword"
+}, _react.default.createElement(Form.Label, null, "Password"), _react.default.createElement(Form.Control, {
+  type: "password",
+  placeholder: "Password"
+})), _react.default.createElement(Form.Group, {
+  controlId: "formBasicCheckbox"
+}, _react.default.createElement(Form.Check, {
+  type: "checkbox",
+  label: "Check me out"
+})), _react.default.createElement(Button, {
+  variant: "primary",
+  type: "submit"
+}, "Submit"));
 },{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./registration-view.scss":"components/registration-view/registration-view.scss"}],"../node_modules/react-bootstrap/esm/utils/divWithClassName.js":[function(require,module,exports) {
 "use strict";
 
@@ -39436,7 +39458,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64727" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65180" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
