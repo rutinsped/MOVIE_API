@@ -39331,7 +39331,7 @@ function (_React$Component) {
         movie: selectedMovie,
         onClick: this.goBack
       }) : movies.map(function (movie) {
-        return _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
+        return _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
           xs: 6,
           md: 4
         }, _react.default.createElement(_movieCard.MovieCard, {
@@ -39340,7 +39340,7 @@ function (_React$Component) {
           onClick: function onClick(movie) {
             return _this3.onMovieClick(movie);
           }
-        })));
+        }))));
       }));
     }
   }]);
@@ -39439,7 +39439,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49296" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49754" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
