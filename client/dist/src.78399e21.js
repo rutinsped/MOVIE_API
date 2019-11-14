@@ -39061,11 +39061,11 @@ function (_React$Component) {
         variant: "top",
         src: movie.ImagePath
       }), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, movie.Title), _react.default.createElement(_Card.default.Text, null, movie.Description), _react.default.createElement(_Button.default, {
-        className: "outline-primary",
+        className: "primary",
         onClick: function onClick() {
           return _onClick(movie);
         },
-        variant: "link"
+        variant: "primary"
       }, "Open")));
     }
   }]);
@@ -39439,7 +39439,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49818" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50393" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
