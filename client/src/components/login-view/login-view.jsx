@@ -24,7 +24,11 @@ export function LoginView(props) {
     return (
       <div className="loginForm">
       <Container>
-       <Row>
+       <Row style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
         <Col xs={6} md={4}>
               <form>
   <Form.Group controlId="formBasicUsername">

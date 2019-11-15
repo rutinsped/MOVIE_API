@@ -38800,7 +38800,13 @@ function LoginView(props) {
 
   return _react.default.createElement("div", {
     className: "loginForm"
-  }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
+  }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, {
+    style: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }
+  }, _react.default.createElement(_Col.default, {
     xs: 6,
     md: 4
   }, _react.default.createElement("form", null, _react.default.createElement(_Form.default.Group, {
