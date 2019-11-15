@@ -23,7 +23,10 @@ export function LoginView(props) {
     };
 
     return (
-      <form>
+      <Container>
+        <Row>
+        <Col xs={6} md={4}>
+              <form>
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Username</Form.Label>
     <Form.Control type="username" placeholder="Enter Username" value={username} onChange={e => setUsername(e.target.value)} />
@@ -35,5 +38,8 @@ export function LoginView(props) {
   </Form.Group>
     <Button variant="primary" type="button" onClick={handleSubmit}>Login</Button>
       </form>
-      );
+      </Col>
+      </Row>
+      </Container>
+       );
   }
