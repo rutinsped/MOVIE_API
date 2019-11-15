@@ -22,6 +22,7 @@ export function LoginView(props) {
     };
 
     return (
+      <div className="LoginForm">
       <Container>
        <Row>
         <Col xs={6} md={4}>
@@ -39,6 +40,7 @@ export function LoginView(props) {
       </form>
       </Col>
       </Row>
-      </Container>
+    </Container>
+    </div>
        );
   }

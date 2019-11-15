@@ -38755,8 +38755,6 @@ var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
 
 var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
 
-var _Spinner = _interopRequireDefault(require("react-bootstrap/Spinner"));
-
 var _Nav = _interopRequireDefault(require("react-bootstrap/Nav"));
 
 var _Navbar = _interopRequireDefault(require("react-bootstrap/Navbar"));
@@ -38800,7 +38798,9 @@ function LoginView(props) {
     props.onLoggedIn(username);
   };
 
-  return _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
+  return _react.default.createElement("div", {
+    className: "LoginForm"
+  }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
     xs: 6,
     md: 4
   }, _react.default.createElement("form", null, _react.default.createElement(_Form.default.Group, {
@@ -38825,9 +38825,9 @@ function LoginView(props) {
     variant: "primary",
     type: "button",
     onClick: handleSubmit
-  }, "Login")))));
+  }, "Login"))))));
 }
-},{"react":"../node_modules/react/index.js","./login-view.scss":"components/login-view/login-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Spinner":"../node_modules/react-bootstrap/esm/Spinner.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"components/registration-view/registration-view.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./login-view.scss":"components/login-view/login-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"components/registration-view/registration-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -39447,7 +39447,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53304" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54008" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

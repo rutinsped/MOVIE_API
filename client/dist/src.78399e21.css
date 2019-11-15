@@ -1,19 +1,3 @@
-body {
-  background: url("http://clipart-library.com/img/759208.jpg");
-  background-size: cover;
-}
-
-.Container {
-  background-color: #D9514EFF;
-  border-radius: 25px;
-  color: #2A2B2DFF;
-  margin-top: 20px;
-}
-
-.col-centered {
-  float: none;
-  margin: 0 auto;
-}
 .card-text {
   display: block;
   /* Fallback for non-webkit */
