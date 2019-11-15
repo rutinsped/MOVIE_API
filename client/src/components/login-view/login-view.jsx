@@ -27,7 +27,7 @@ export function LoginView(props) {
        <Row>
         <Col xs={6} md={4}>
               <form>
-  <Form.Group controlId="formBasicEmail">
+  <Form.Group controlId="formBasicUsername">
     <Form.Label>Username</Form.Label>
     <Form.Control type="username" placeholder="Enter Username" value={username} onChange={e => setUsername(e.target.value)} />
   </Form.Group>
