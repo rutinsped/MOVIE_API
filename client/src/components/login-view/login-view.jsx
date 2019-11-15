@@ -3,7 +3,6 @@ import './login-view.scss';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Grid from 'react-bootstrap/Grid';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
@@ -24,8 +23,7 @@ export function LoginView(props) {
 
     return (
       <Container>
-        <Grid>
-        <Row>
+       <Row>
         <Col xs={6} md={4}>
               <form>
   <Form.Group controlId="formBasicEmail">
@@ -41,7 +39,6 @@ export function LoginView(props) {
       </form>
       </Col>
       </Row>
-      </Grid>
       </Container>
        );
   }
