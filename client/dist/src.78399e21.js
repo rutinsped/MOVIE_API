@@ -38804,7 +38804,8 @@ function LoginView(props) {
     style: {
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      backgroundColor: "Navy"
     }
   }, _react.default.createElement(_Col.default, {
     xs: 6,
