@@ -38799,7 +38799,7 @@ function LoginView(props) {
   };
 
   return _react.default.createElement("div", {
-    className: "LoginForm"
+    className: "loginForm"
   }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
     xs: 6,
     md: 4
