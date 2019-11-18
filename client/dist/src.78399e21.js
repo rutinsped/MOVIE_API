@@ -39238,6 +39238,22 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 require("./movie-view.scss");
 
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+
+var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+
+var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
+var _Spinner = _interopRequireDefault(require("react-bootstrap/Spinner"));
+
+var _Nav = _interopRequireDefault(require("react-bootstrap/Nav"));
+
+var _Navbar = _interopRequireDefault(require("react-bootstrap/Navbar"));
+
+var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
+
+var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -39280,7 +39296,7 @@ function (_React$Component) {
           movie = _this$props.movie,
           onClick = _this$props.onClick;
       if (!movie) return null;
-      return _react.default.createElement(Container, null, _react.default.createElement("div", {
+      return _react.default.createElement(_Container.default, null, _react.default.createElement("div", {
         className: "movie-view"
       }, _react.default.createElement("div", {
         className: "movie-title"
@@ -39309,7 +39325,7 @@ function (_React$Component) {
         className: "label"
       }, "Director:"), _react.default.createElement("div", {
         className: "value"
-      }, movie.Director.Name)), _react.default.createElement("button", {
+      }, movie.Director.Name)), _react.default.createElement(_Button.default, {
         className: "primary",
         onClick: onClick,
         variant: "primary"
@@ -39321,7 +39337,7 @@ function (_React$Component) {
 }(_react.default.Component);
 
 exports.MovieView = MovieView;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./movie-view.scss":"components/movie-view/movie-view.scss"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./movie-view.scss":"components/movie-view/movie-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Spinner":"../node_modules/react-bootstrap/esm/Spinner.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
