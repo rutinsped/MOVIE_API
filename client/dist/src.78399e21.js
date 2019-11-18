@@ -39070,7 +39070,9 @@ function (_React$Component) {
           _onClick = _this$props.onClick;
       return _react.default.createElement(_Card.default, {
         style: {
-          width: '20rem'
+          width: '20rem',
+          height: '40rem',
+          margin: '2rem'
         }
       }, _react.default.createElement(_Card.default.Img, {
         variant: "top",
