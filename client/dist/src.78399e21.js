@@ -38842,18 +38842,129 @@ module.hot.accept(reloadCSS);
 },{"_css_loader":"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/registration-view/registration-view.jsx":[function(require,module,exports) {
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.RegistrationView = RegistrationView;
+
 var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
 require("./registration-view.scss");
+
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+
+var _Row = _interopRequireDefault(require("react-bootstrap/Row"));
+
+var _Col = _interopRequireDefault(require("react-bootstrap/Col"));
+
+var _Nav = _interopRequireDefault(require("react-bootstrap/Nav"));
+
+var _Navbar = _interopRequireDefault(require("react-bootstrap/Navbar"));
+
+var _Form = _interopRequireDefault(require("react-bootstrap/Form"));
+
+var _Button = _interopRequireDefault(require("react-bootstrap/Button"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./registration-view.scss":"components/registration-view/registration-view.scss"}],"../node_modules/react-bootstrap/esm/utils/divWithClassName.js":[function(require,module,exports) {
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function RegistrationView(props) {
+  var _useState = (0, _react.useState)(''),
+      _useState2 = _slicedToArray(_useState, 2),
+      username = _useState2[0],
+      setUsername = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(''),
+      _useState4 = _slicedToArray(_useState3, 2),
+      name = _useState4[0],
+      setName = _useState4[1];
+
+  var _useState5 = (0, _react.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      email = _useState6[0],
+      setEmail = _useState6[1];
+
+  var _useState7 = (0, _react.useState)(''),
+      _useState8 = _slicedToArray(_useState7, 2),
+      password = _useState8[0],
+      setPassword = _useState8[1];
+
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    console.log(username, name, email, password);
+    /* Send a request to the server for authentication */
+
+    /* then call props.onLoggedIn(username) */
+
+    props.onRegisteredIn(username);
+  };
+
+  return _react.default.createElement("div", {
+    className: "registrationForm"
+  }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, {
+    style: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "CornflowerBlue "
+    }
+  }, _react.default.createElement(_Col.default, {
+    xs: 6,
+    md: 4
+  }, _react.default.createElement("form", null, _react.default.createElement(_Form.default.Group, {
+    controlId: "formBasicUsername"
+  }, _react.default.createElement(_Form.default.Label, null, "Username"), _react.default.createElement(_Form.default.Control, {
+    type: "username",
+    placeholder: "Enter Username",
+    value: username,
+    onChange: function onChange(e) {
+      return setUsername(e.target.value);
+    }
+  })), _react.default.createElement(_Form.default.Group, {
+    controlId: "formBasicName"
+  }, _react.default.createElement(_Form.default.Label, null, "Name"), _react.default.createElement(_Form.default.Control, {
+    type: "name",
+    placeholder: "Enter Name",
+    value: name,
+    onChange: function onChange(e) {
+      return setName(e.target.value);
+    }
+  })), _react.default.createElement(_Form.default.Group, {
+    controlId: "formBasicEmail"
+  }, _react.default.createElement(_Form.default.Label, null, "Email"), _react.default.createElement(_Form.default.Control, {
+    type: "uemail",
+    placeholder: "Enter Email",
+    value: email,
+    onChange: function onChange(e) {
+      return setEmail(e.target.value);
+    }
+  })), _react.default.createElement(_Form.default.Group, {
+    controlId: "formBasicPassword"
+  }, _react.default.createElement(_Form.default.Label, null, "Password"), _react.default.createElement(_Form.default.Control, {
+    type: "password",
+    placeholder: "Password",
+    value: password,
+    onChange: function onChange(e) {
+      return setPassword(e.target.value);
+    }
+  })), _react.default.createElement(_Button.default, {
+    variant: "primary",
+    type: "button",
+    onClick: handleSubmit
+  }, "Register"))))));
+}
+},{"react":"../node_modules/react/index.js","./registration-view.scss":"components/registration-view/registration-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js"}],"../node_modules/react-bootstrap/esm/utils/divWithClassName.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
