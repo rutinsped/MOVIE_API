@@ -39280,7 +39280,7 @@ function (_React$Component) {
           movie = _this$props.movie,
           onClick = _this$props.onClick;
       if (!movie) return null;
-      return _react.default.createElement("div", {
+      return _react.default.createElement(Container, null, _react.default.createElement("div", {
         className: "movie-view"
       }, _react.default.createElement("div", {
         className: "movie-title"
@@ -39310,9 +39310,10 @@ function (_React$Component) {
       }, "Director:"), _react.default.createElement("div", {
         className: "value"
       }, movie.Director.Name)), _react.default.createElement("button", {
-        className: "backtomovie",
-        onClick: onClick
-      }, "Back to all movies"));
+        className: "primary",
+        onClick: onClick,
+        variant: "primary"
+      }, "Back to all Movies")));
     }
   }]);
 

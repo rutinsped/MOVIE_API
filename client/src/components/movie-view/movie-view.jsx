@@ -17,7 +17,8 @@ export class MovieView extends React.Component {
     if (!movie) return null;
 
     return (
-       <div className="movie-view">
+      <Container>       
+        <div className="movie-view">
           <div className="movie-title">
           <div className="label">Title:</div>
           <div className="value">{movie.Title}</div>
@@ -36,10 +37,11 @@ export class MovieView extends React.Component {
           <div className="value">{movie.Director.Name}</div>
         </div>
         <button
-         className="backtomovie"
+         className="primary"
          onClick={onClick}
-       >Back to all movies</button>
+         variant="primary">Back to all Movies</button>
        </div>
+       </Container>
 
      );
   }

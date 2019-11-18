@@ -31,7 +31,7 @@ export function LoginView(props) {
           backgroundColor: "Navy"
         }}>
         <Col xs={6} md={4}>
-              <form>
+  <form>
   <Form.Group controlId="formBasicUsername">
     <Form.Label>Username</Form.Label>
     <Form.Control type="username" placeholder="Enter Username" value={username} onChange={e => setUsername(e.target.value)} />
