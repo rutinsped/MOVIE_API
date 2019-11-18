@@ -39070,7 +39070,8 @@ function (_React$Component) {
           _onClick = _this$props.onClick;
       return _react.default.createElement(_Card.default, {
         style: {
-          width: '20rem'
+          display: flex,
+          width: '16rem'
         }
       }, _react.default.createElement(_Card.default.Img, {
         variant: "top",
@@ -39454,7 +39455,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54630" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56894" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
