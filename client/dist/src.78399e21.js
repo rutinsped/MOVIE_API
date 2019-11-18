@@ -39296,7 +39296,10 @@ function (_React$Component) {
           movie = _this$props.movie,
           onClick = _this$props.onClick;
       if (!movie) return null;
-      return _react.default.createElement(_Container.default, null, _react.default.createElement("div", {
+      return _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, null, _react.default.createElement(_Col.default, {
+        xs: 6,
+        md: 8
+      }, _react.default.createElement("div", {
         className: "movie-view"
       }, _react.default.createElement("div", {
         className: "movie-title"
@@ -39329,7 +39332,7 @@ function (_React$Component) {
         className: "primary",
         onClick: onClick,
         variant: "primary"
-      }, "Back to all Movies")));
+      }, "Back to all Movies")))));
     }
   }]);
 

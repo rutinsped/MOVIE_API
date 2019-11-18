@@ -28,7 +28,9 @@ export class MovieView extends React.Component {
     if (!movie) return null;
 
     return (
-      <Container>       
+      <Container> 
+        <Row>  
+        <Col xs={6} md={8}>   
         <div className="movie-view">
           <div className="movie-title">
           <div className="label">Title:</div>
@@ -52,6 +54,8 @@ export class MovieView extends React.Component {
          onClick={onClick}
          variant="primary">Back to all Movies</Button>
        </div>
+       </Col>
+       </Row>
        </Container>
 
      );
