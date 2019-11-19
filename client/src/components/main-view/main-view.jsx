@@ -30,6 +30,21 @@ export class MainView extends React.Component {
     };
   }
 
+  getMovies(token) {
+    axios.get('https://cinesider.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      // Assign the result to the state
+      this.setState({
+        movies: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   componentDidMount() {
     axios.get('https://cinesider.herokuapp.com/movies')
       .then(response => {
