@@ -39453,16 +39453,14 @@ function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this3 = this;
+      var accessToken = localStorage.getItem('token');
 
-      _axios.default.get('https://cinesider.herokuapp.com/movies').then(function (response) {
-        // Assign the result to the state
-        _this3.setState({
-          movies: response.data
+      if (accessToken !== null) {
+        this.setState({
+          user: localStorage.getItem('user')
         });
-      }).catch(function (error) {
-        console.log(error);
-      });
+        this.getMovies(accessToken);
+      }
     }
   }, {
     key: "onMovieClick",
@@ -39485,7 +39483,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       var _this$state = this.state,
           movies = _this$state.movies,
@@ -39494,7 +39492,7 @@ function (_React$Component) {
       console.log(movies);
       if (!user) return _react.default.createElement(_loginView.LoginView, {
         onLoggedIn: function onLoggedIn(user) {
-          return _this4.onLoggedIn(user);
+          return _this3.onLoggedIn(user);
         }
       }); // Before the movies have been loaded
 
@@ -39514,7 +39512,7 @@ function (_React$Component) {
           key: movie._id,
           movie: movie,
           onClick: function onClick(movie) {
-            return _this4.onMovieClick(movie);
+            return _this3.onMovieClick(movie);
           }
         }));
       }))));
@@ -39615,7 +39613,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60444" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60949" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
