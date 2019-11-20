@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import './main-view.scss';
 
 import Container from 'react-bootstrap/Container';
@@ -25,7 +25,6 @@ export class MainView extends React.Component {
 
     this.state = {
       movies: null,
-      selectedMovie: null,
       user: null
     };
   }
@@ -81,33 +80,28 @@ export class MainView extends React.Component {
 
 
   render() {
-    const { movies, selectedMovie, user } = this.state;
-    console.log(movies)
-
+    const { movies, user } = this.state;
+    
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     // Before the movies have been loaded
     if (!movies) return <div className="main-view"/>;
 
     return (
+      <Router>
       <div className="main-view">
-       {selectedMovie
-          ? <MovieView movie={selectedMovie}  onClick={this.goBack}/>
-          : 
-          <Container>
-            <Row>
-              {movies.map(movie => (
-               <Col xs={6} md={4}>
-                 <MovieCard key={movie._id}
-                   movie={movie}
-                   onClick={movie => this.onMovieClick(movie)}
-                 />
-               </Col>
-               ))}
-             </Row>
-           </Container>
-       }
-      </div>
+      <Route exact path="/" render={() => movies.map(m => <MovieCard key={m._id} movie={m}/>)}/>
+          <Route path="/movies/:movieId" render={({match}) => <MovieView movie={movies.find(m => m._id === match.params.movieId)}/>}/>
+          <Route path="/directors/:name" render={({ match }) => {
+  if (!movies) return <div className="main-view"/>;
+  return <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director}/>}
+} />
+         <Route path="/genres/:name" render={({ match }) => {
+  if (!movies) return <div className="main-view"/>;
+  return <GenreView director={movies.find(m => m.Genre.Name === match.params.name).Genre}/>}
+ } />
+         </div>
+      </Router>
     );
   }
 }
