@@ -38793,7 +38793,7 @@ function LoginView(props) {
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
 
-    _axios.default.post('https://cinesider.herokuapp.com/login', {
+    _axios.default.post('https://cinesider.herokuapp.com/users', {
       Username: username,
       Password: password
     }).then(function (response) {
@@ -39613,7 +39613,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60949" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61881" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
