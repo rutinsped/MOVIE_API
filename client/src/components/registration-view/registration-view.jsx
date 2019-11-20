@@ -7,6 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
@@ -15,13 +16,23 @@ export function RegistrationView(props) {
   const [ password, setPassword ] = useState('');
 
   
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    console.log(username, name, email, password);
-    /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onRegisteredIn(username);
-    };
+    axios.post('https://cinesider.herokuapp.com/users', {
+    Username: username,
+    Name: name,
+    Email: email,
+    Password: password,
+   })
+    .then(response => {
+      const data = response.data;
+      console.log(data);
+      window.open('/', '_self');
+    })
+    .catch(e => {
+      console.log('error registering user')
+    });
+  };
 
     return (
       <div className="registrationForm">
@@ -53,7 +64,7 @@ export function RegistrationView(props) {
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
   </Form.Group>
-    <Button variant="primary" type="button" onClick={handleSubmit}>Register</Button>
+    <Button variant="primary" type="button" onClick={handleRegister}>Register</Button>
       </form>
       </Col>
       </Row>
