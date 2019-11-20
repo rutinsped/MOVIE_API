@@ -38793,7 +38793,7 @@ function LoginView(props) {
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
 
-    _axios.default.post('https://cinesider.herokuapp.com/users', {
+    _axios.default.post('https://cinesider.herokuapp.com/login', {
       Username: username,
       Password: password
     }).then(function (response) {
