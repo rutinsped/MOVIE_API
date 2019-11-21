@@ -7,6 +7,12 @@ import './movie-card.scss';
 import { Link } from "react-router-dom";
 
 export class MovieCard extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
     const { movie } = this.props;
 
