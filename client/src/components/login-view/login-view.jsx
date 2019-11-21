@@ -37,7 +37,8 @@ export function LoginView(props) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "Navy"
+          backgroundColor: "Navy",
+          marginTop: 100
         }}>
         <Col xs={6} md={4}>
   <form>
