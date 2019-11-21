@@ -16,6 +16,11 @@ import Button from 'react-bootstrap/Button';
 
 export class DirectorView extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
     const { director } = this.props;
 
