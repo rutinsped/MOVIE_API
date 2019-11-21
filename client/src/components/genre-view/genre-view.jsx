@@ -16,6 +16,11 @@ import Button from 'react-bootstrap/Button';
 
 export class GenreView extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {};
+  }
+
   render() {
     const { genre } = this.props;
 
