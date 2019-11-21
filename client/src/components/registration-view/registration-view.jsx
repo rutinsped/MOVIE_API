@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
