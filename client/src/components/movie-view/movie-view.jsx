@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState }  from 'react';
 import PropTypes from 'prop-types';
 import './movie-view.scss';
 import { Link } from "react-router-dom";
