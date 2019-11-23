@@ -7,6 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
@@ -19,7 +20,7 @@ export function RegistrationView(props) {
   
   const handleRegister = (e) => {
     e.preventDefault();
-    axios.post('https://cinesider.herokuapp.com/users', {
+    axios.post('https://cinesider.herokuapp.com/client/users', {
     Username: username,
     Name: name,
     Email: email,
