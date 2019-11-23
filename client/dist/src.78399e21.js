@@ -41837,7 +41837,7 @@ function LoginView(props) {
     type: "button",
     onClick: handleSubmit
   }, "Login"), _react.default.createElement(_reactRouterDom.Link, {
-    to: "/.registration-view"
+    to: "/registrationView"
   }), _react.default.createElement(_Button.default, {
     className: "primary",
     variant: "link"
@@ -41916,7 +41916,7 @@ function RegistrationView(props) {
   var handleRegister = function handleRegister(e) {
     e.preventDefault();
 
-    _axios.default.post('https://cinesider.herokuapp.com/users', {
+    _axios.default.post('https://cinesider.herokuapp.com/client/users', {
       Username: username,
       Name: name,
       Email: email,
@@ -42679,7 +42679,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64611" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53139" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
