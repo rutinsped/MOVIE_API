@@ -42601,7 +42601,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _reactRouterDom = _interopRequireDefault(require("react-router-dom"));
+var _reactRouterDom = require("react-router-dom");
 
 var _mainView = require("./components/main-view/main-view");
 
