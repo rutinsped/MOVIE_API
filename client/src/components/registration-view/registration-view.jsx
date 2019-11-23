@@ -66,8 +66,7 @@ export function RegistrationView(props) {
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
   </Form.Group>
-    <Button variant="primary" type="button" onClick={handleRegister}>Register</Button>
-      </form>
+    </form>
       </Col>
       </Row>
     </Container>
