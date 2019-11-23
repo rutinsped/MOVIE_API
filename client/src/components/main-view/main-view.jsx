@@ -88,7 +88,7 @@ export class MainView extends React.Component {
     if (!movies) return <div className="main-view"/>;
 
     return (
-      <BrowserRouter>
+      <Router>
       <div className="main-view">
       <Route exact path="/" render={() => movies.map(m => <MovieCard key={m._id} movie={m}/>)}/>
       <Route path="/register" render={() => <RegistrationView />} />
@@ -102,7 +102,7 @@ export class MainView extends React.Component {
       return <GenreView director={movies.find(m => m.Genre.Name === match.params.name).Genre}/>}
     } />
          </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
