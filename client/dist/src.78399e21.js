@@ -42540,7 +42540,14 @@ function (_React$Component) {
             });
           });
         }
-      }), _react.default.createElement(_reactRouterDom.Route, {
+      }), "if (!user) return ", _react.default.createElement(_loginView.LoginView, {
+        onLoggedIn: function onLoggedIn(user) {
+          return _this3.onLoggedIn(user);
+        }
+      }), "; return movies.map(m => ", _react.default.createElement(_movieCard.MovieCard, {
+        key: m._id,
+        movie: m
+      }), ") } }/>", _react.default.createElement(_reactRouterDom.Route, {
         path: "/register",
         render: function render() {
           return _react.default.createElement(_registrationView.RegistrationView, null);
