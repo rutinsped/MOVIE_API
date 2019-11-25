@@ -42537,6 +42537,11 @@ function (_React$Component) {
         exact: true,
         path: "/",
         render: function render() {
+          if (!user) return _react.default.createElement(_loginView.LoginView, {
+            onLoggedIn: function onLoggedIn(user) {
+              return _this3.onLoggedIn(user);
+            }
+          });
           return movies.map(function (m) {
             return _react.default.createElement(_movieCard.MovieCard, {
               key: m._id,
@@ -42544,14 +42549,7 @@ function (_React$Component) {
             });
           });
         }
-      }), "if (!user) return ", _react.default.createElement(_loginView.LoginView, {
-        onLoggedIn: function onLoggedIn(user) {
-          return _this3.onLoggedIn(user);
-        }
-      }), "; return movies.map(m => ", _react.default.createElement(_movieCard.MovieCard, {
-        key: m._id,
-        movie: m
-      }), ") } }/>", _react.default.createElement(_reactRouterDom.Route, {
+      }), _react.default.createElement(_reactRouterDom.Route, {
         path: "/register",
         render: function render() {
           return _react.default.createElement(_registrationView.RegistrationView, null);
@@ -42668,7 +42666,7 @@ function (_React$Component) {
 
 var container = document.getElementsByClassName('app-container')[0]; // Tell React to render our app in the root DOM element
 
-_reactDom.default.render(_react.default.createElement(_reactRouterDom.BrowserRouter, null, (_react.default.createElement(movie_apiApplication), container)));
+_reactDom.default.render(_react.default.createElement(movie_apiApplication), container);
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./components/main-view/main-view":"components/main-view/main-view.jsx","./index.scss":"index.scss"}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
