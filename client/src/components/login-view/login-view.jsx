@@ -9,12 +9,13 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
 export function LoginView(props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('https://cinesider.herokuapp.com/login', {
@@ -31,6 +32,7 @@ export function LoginView(props) {
   };
 
     return (
+      <Router>
       <div className="loginForm">
       <Container>
        <Row style={{
@@ -41,7 +43,7 @@ export function LoginView(props) {
           marginTop: 100
         }}>
         <Col xs={6} md={4}>
-  <form>
+      <form>
   <Form.Group controlId="formBasicUsername">
     <Form.Label>Username</Form.Label>
     <Form.Control type="username" placeholder="Enter Username" value={username} onChange={e => setUsername(e.target.value)} />
@@ -52,14 +54,16 @@ export function LoginView(props) {
     <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
   </Form.Group>
 
-  <Form.Group controlId="formBasicButtons">
-      <Button variant="primary" type="button" onClick={handleSubmit}>Login</Button>
-      <Link to="/register" className="btn btn-link">Register</Link>
-  </Form.Group>
+       <Button variant="primary" type="button" onClick={handleSubmit}>Login</Button>
+  
+  <Link to={`/register`}>
+  <Button className="btn-register" variant="secondary">Register</Button>
+  </Link>
      </form>
-      </Col>
+     </Col>
       </Row>
     </Container>
     </div>
-       );
+    </Router>
+    );
   }

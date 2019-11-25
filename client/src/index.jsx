@@ -1,7 +1,6 @@
 // client/src/index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import { MainView } from './components/main-view/main-view';
 
@@ -19,4 +18,5 @@ class movie_apiApplication extends React.Component {
 const container = document.getElementsByClassName('app-container')[0];
 
 // Tell React to render our app in the root DOM element
-ReactDOM.render(React.createElement(movie_apiApplication), container);
+ReactDOM.render(React.createElement(movie_apiApplication), container
+ );

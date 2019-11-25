@@ -41801,7 +41801,7 @@ function LoginView(props) {
     });
   };
 
-  return _react.default.createElement("div", {
+  return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", {
     className: "loginForm"
   }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, {
     style: {
@@ -41832,16 +41832,16 @@ function LoginView(props) {
     onChange: function onChange(e) {
       return setPassword(e.target.value);
     }
-  })), _react.default.createElement(_Form.default.Group, {
-    controlId: "formBasicButtons"
-  }, _react.default.createElement(_Button.default, {
+  })), _react.default.createElement(_Button.default, {
     variant: "primary",
     type: "button",
     onClick: handleSubmit
   }, "Login"), _react.default.createElement(_reactRouterDom.Link, {
-    to: "/register",
-    className: "btn btn-link"
-  }, "Register")))))));
+    to: "/register"
+  }, _react.default.createElement(_Button.default, {
+    className: "btn-register",
+    variant: "secondary"
+  }, "Register"))))))));
 }
 },{"react":"../node_modules/react/index.js","./login-view.scss":"components/login-view/login-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/registration-view/registration-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -42546,6 +42546,11 @@ function (_React$Component) {
           return _react.default.createElement(_registrationView.RegistrationView, null);
         }
       }), _react.default.createElement(_reactRouterDom.Route, {
+        path: "/login",
+        render: function render() {
+          return _react.default.createElement(_loginView.LoginView, null);
+        }
+      }), _react.default.createElement(_reactRouterDom.Route, {
         path: "/movies/:movieId",
         render: function render(_ref) {
           var match = _ref.match;
@@ -42681,7 +42686,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63107" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52963" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
