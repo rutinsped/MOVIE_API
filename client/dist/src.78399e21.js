@@ -41930,7 +41930,7 @@ function RegistrationView(props) {
     });
   };
 
-  return _react.default.createElement("div", {
+  return _react.default.createElement(Router, null, _react.default.createElement("div", {
     className: "registrationForm"
   }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, {
     style: {
@@ -41982,7 +41982,11 @@ function RegistrationView(props) {
     variant: "primary",
     type: "button",
     onClick: handleRegister
-  }, "Register"))))));
+  }, "Register"), _react.default.createElement(_Form.default.Group, {
+    controlId: "formNewUser"
+  }, _react.default.createElement(_Form.default.Text, null, "Already registered? Click ", _react.default.createElement(_reactRouterDom.Link, {
+    to: '/login'
+  }, "here"), " to login"))))))));
 }
 },{"react":"../node_modules/react/index.js","./registration-view.scss":"components/registration-view/registration-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"../node_modules/react-bootstrap/esm/utils/divWithClassName.js":[function(require,module,exports) {
 "use strict";
@@ -42203,7 +42207,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var movie = this.props.movie;
-      return _react.default.createElement(_Card.default, {
+      return _react.default.createElement(Router, null, _react.default.createElement(_Card.default, {
         style: {
           width: '20rem',
           height: '40rem',
@@ -42217,7 +42221,7 @@ function (_React$Component) {
       }), _react.default.createElement(_Button.default, {
         className: "primary",
         variant: "link"
-      }, "Open")));
+      }, "Open"))));
     }
   }]);
 

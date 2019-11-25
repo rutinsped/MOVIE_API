@@ -17,6 +17,7 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
+      <Router>
       <Card style={{ width: '20rem', height: '40rem', margin: '2rem' }}>
         <Card.Img variant="top" src={movie.ImagePath} />
         <Card.Body>
@@ -26,6 +27,7 @@ export class MovieCard extends React.Component {
           <Button className="primary" variant="link">Open</Button>
         </Card.Body>
       </Card>
+      </Router>
     );
   }
 }

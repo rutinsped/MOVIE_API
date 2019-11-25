@@ -37,6 +37,7 @@ export function RegistrationView(props) {
   };
 
     return (
+    <Router>
       <div className="registrationForm">
       <Container>
        <Row style={{
@@ -67,10 +68,14 @@ export function RegistrationView(props) {
     <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
   </Form.Group>
     <Button variant="primary" type="button" onClick={handleRegister}>Register</Button>
+    <Form.Group controlId='formNewUser'>
+      <Form.Text>Already registered? Click <Link to={'/login'}>here</Link> to login</Form.Text>
+    </Form.Group>
     </form>
       </Col>
       </Row>
     </Container>
     </div>
+    </Router>
        );
   }
