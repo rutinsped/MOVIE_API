@@ -18,5 +18,8 @@ class movie_apiApplication extends React.Component {
 const container = document.getElementsByClassName('app-container')[0];
 
 // Tell React to render our app in the root DOM element
-ReactDOM.render(React.createElement(movie_apiApplication), container
+ReactDOM.render(
+  <Router>
+  {React.createElement(movie_apiApplication), container}
+  </Router>
  );
