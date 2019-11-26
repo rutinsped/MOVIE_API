@@ -42550,6 +42550,7 @@ function (_React$Component) {
           });
         }
       }), _react.default.createElement(_reactRouterDom.Route, {
+        exact: true,
         path: "/register",
         render: function render() {
           return _react.default.createElement(_registrationView.RegistrationView, null);
