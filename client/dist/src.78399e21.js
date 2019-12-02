@@ -41913,7 +41913,7 @@ function RegistrationView(props) {
   var handleRegister = function handleRegister(e) {
     e.preventDefault();
 
-    _axios.default.post('https://cinesider.herokuapp.com/client/users', {
+    _axios.default.post('https://cinesider.herokuapp.com/users', {
       Username: username,
       Name: name,
       Email: email,

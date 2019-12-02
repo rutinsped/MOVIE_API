@@ -20,7 +20,7 @@ export function RegistrationView(props) {
   
   const handleRegister = (e) => {
     e.preventDefault();
-    axios.post('https://cinesider.herokuapp.com/client/users', {
+    axios.post('https://cinesider.herokuapp.com/users', {
     Username: username,
     Name: name,
     Email: email,
