@@ -42216,8 +42216,8 @@ function (_React$Component) {
       }), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, movie.Title), _react.default.createElement(_Card.default.Text, null, movie.Description), _react.default.createElement(_reactRouterDom.Link, {
         to: "/movies/".concat(movie._id)
       }, _react.default.createElement(_Button.default, {
-        className: "primary",
-        variant: "link"
+        className: "button-card",
+        variant: "info"
       }, "Open"))));
     }
   }]);
@@ -42365,11 +42365,12 @@ function (_React$Component) {
         to: "/directors/".concat(movie.Director.Name)
       }, _react.default.createElement(_Button.default, {
         variant: "link"
-      }, "Director")), _react.default.createElement(_Button.default, {
+      }, "Director")), _react.default.createElement(_reactRouterDom.Link, {
+        to: "/movies/".concat(movie._id)
+      }, _react.default.createElement(_Button.default, {
         className: "primary",
-        onClick: onClick,
-        variant: "primary"
-      }, "Back to all Movies")))));
+        variant: "link"
+      }, "Back to all Movies"))))));
     }
   }]);
 
