@@ -176,8 +176,6 @@ app.post('/users',
         Name: req.body.Name,
         Password: hashedPassword,
         Email: req.body.Email,
-        Birth_date: req.body.Birth_date,
-        Favorit_movie: req.body.Favorit_movie
       })
       .then(function(user) {res.status(201).json(user)
       })
