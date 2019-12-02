@@ -42366,7 +42366,7 @@ function (_React$Component) {
       }, _react.default.createElement(_Button.default, {
         variant: "link"
       }, "Director")), _react.default.createElement(_reactRouterDom.Link, {
-        to: "/movies/".concat(movie._id)
+        to: "/movies"
       }, _react.default.createElement(_Button.default, {
         className: "primary",
         variant: "link"
@@ -42518,8 +42518,7 @@ function (_React$Component) {
 
       var _this$state = this.state,
           movies = _this$state.movies,
-          user = _this$state.user; //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-      // Before the movies have been loaded
+          user = _this$state.user; // Before the movies have been loaded
 
       if (!movies) return _react.default.createElement("div", {
         className: "main-view"
