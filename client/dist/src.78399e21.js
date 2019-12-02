@@ -42204,7 +42204,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var movie = this.props.movie;
-      return _react.default.createElement(Router, null, _react.default.createElement(_Card.default, {
+      return _react.default.createElement(_Card.default, {
         style: {
           width: '20rem',
           height: '40rem',
@@ -42218,7 +42218,7 @@ function (_React$Component) {
       }), _react.default.createElement(_Button.default, {
         className: "primary",
         variant: "link"
-      }, "Open"))));
+      }, "Open")));
     }
   }]);
 
