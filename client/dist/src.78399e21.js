@@ -42215,10 +42215,10 @@ function (_React$Component) {
         src: movie.ImagePath
       }), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, movie.Title), _react.default.createElement(_Card.default.Text, null, movie.Description), _react.default.createElement(_reactRouterDom.Link, {
         to: "/movies/".concat(movie._id)
-      }), _react.default.createElement(_Button.default, {
+      }, _react.default.createElement(_Button.default, {
         className: "primary",
         variant: "link"
-      }, "Open")));
+      }, "Open"))));
     }
   }]);
 
