@@ -37,7 +37,8 @@ export function RegistrationView(props) {
   };
 
     return (
-    <Router>
+      
+   
       <div className="registrationForm">
       <Container>
        <Row style={{
@@ -76,6 +77,5 @@ export function RegistrationView(props) {
       </Row>
     </Container>
     </div>
-    </Router>
-       );
+    );
   }

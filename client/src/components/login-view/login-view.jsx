@@ -32,7 +32,7 @@ export function LoginView(props) {
   };
 
     return (
-      <Router>
+     
       <div className="loginForm">
       <Container>
        <Row style={{
@@ -62,6 +62,5 @@ export function LoginView(props) {
       </Row>
     </Container>
     </div>
-    </Router>
-    );
+   );
   }

@@ -82,7 +82,7 @@ export class MainView extends React.Component {
   render() {
     const { movies, user } = this.state;
     
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+    //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     // Before the movies have been loaded
     if (!movies) return <div className="main-view"/>;
@@ -91,22 +91,35 @@ export class MainView extends React.Component {
       <BrowserRouter>
       <div className="main-view">
         <Switch>
-          <Route exact path="/" render={() => { if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+          <Route exact path="/" 
+          render={() => 
+            { if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
         
           return movies.map(m => <MovieCard key={m._id} movie={m}/>)
       }
-    }/>
+    }
+  />
           <Route exact path="/register" render={() => <RegistrationView />} />
           <Route path="/login" render={() => <LoginView />} />
-          <Route path="/movies/:movieId" render={({match}) => <MovieView movie={movies.find(m => m._id === match.params.movieId)}/>}/>
-          <Route path="/directors/:name" render={({ match }) => {
+          <Route path="/movies/:movieId" 
+          render={({match}) => <MovieView movie={movies.find(m => m._id === match.params.movieId)}/>}
+        />
+          <Route path="/directors/:name" 
+          render={({ match }) =>
+        {
           if (!movies) return <div className="main-view"/>;
-          return <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director}/>}
-    } />
-          <Route path="/genres/:name" render={({ match }) => {
+          return <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director}/>
+        }
+          }
+    />
+          <Route path="/genres/:name"
+           render={({ match }) => 
+        {
           if (!movies) return <div className="main-view"/>;
-          return <GenreView director={movies.find(m => m.Genre.Name === match.params.name).Genre}/>}
-    } />
+          return <GenreView director={movies.find(m => m.Genre.Name === match.params.name).Genre}/>
+        }
+      }     
+    />
         </Switch>
       </div>
     </BrowserRouter>

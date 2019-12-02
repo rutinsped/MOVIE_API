@@ -21,4 +21,3 @@ const container = document.getElementsByClassName('app-container')[0];
 ReactDOM.render(React.createElement(movie_apiApplication), container
   );
  
- 
