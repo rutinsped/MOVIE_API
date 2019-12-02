@@ -47,5 +47,4 @@ MovieCard.propTypes = {
       Birth: PropTypes.string.isRequired
     })
   }).isRequired,
-  onClick: PropTypes.func.isRequired
-};
+}; 
