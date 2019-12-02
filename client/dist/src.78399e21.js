@@ -41801,7 +41801,7 @@ function LoginView(props) {
     });
   };
 
-  return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", {
+  return _react.default.createElement("div", {
     className: "loginForm"
   }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, {
     style: {
@@ -41838,7 +41838,7 @@ function LoginView(props) {
     onClick: handleSubmit
   }, "Login"), _react.default.createElement(_reactRouterDom.Link, {
     to: "/register"
-  }, "register")))))));
+  }, "register"))))));
 }
 },{"react":"../node_modules/react/index.js","./login-view.scss":"components/login-view/login-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"components/registration-view/registration-view.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
@@ -41927,7 +41927,7 @@ function RegistrationView(props) {
     });
   };
 
-  return _react.default.createElement(Router, null, _react.default.createElement("div", {
+  return _react.default.createElement("div", {
     className: "registrationForm"
   }, _react.default.createElement(_Container.default, null, _react.default.createElement(_Row.default, {
     style: {
@@ -41983,7 +41983,7 @@ function RegistrationView(props) {
     controlId: "formNewUser"
   }, _react.default.createElement(_Form.default.Text, null, "Already registered? Click ", _react.default.createElement(_reactRouterDom.Link, {
     to: '/login'
-  }, "here"), " to login"))))))));
+  }, "here"), " to login")))))));
 }
 },{"react":"../node_modules/react/index.js","./registration-view.scss":"components/registration-view/registration-view.scss","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Row":"../node_modules/react-bootstrap/esm/Row.js","react-bootstrap/Col":"../node_modules/react-bootstrap/esm/Col.js","react-bootstrap/Nav":"../node_modules/react-bootstrap/esm/Nav.js","react-bootstrap/Navbar":"../node_modules/react-bootstrap/esm/Navbar.js","react-bootstrap/Form":"../node_modules/react-bootstrap/esm/Form.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js"}],"../node_modules/react-bootstrap/esm/utils/divWithClassName.js":[function(require,module,exports) {
 "use strict";
@@ -42518,17 +42518,13 @@ function (_React$Component) {
 
       var _this$state = this.state,
           movies = _this$state.movies,
-          user = _this$state.user;
-      if (!user) return _react.default.createElement(_loginView.LoginView, {
-        onLoggedIn: function onLoggedIn(user) {
-          return _this3.onLoggedIn(user);
-        }
-      }); // Before the movies have been loaded
+          user = _this$state.user; //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+      // Before the movies have been loaded
 
       if (!movies) return _react.default.createElement("div", {
         className: "main-view"
       });
-      return _react.default.createElement(BrowserRouter, null, _react.default.createElement("div", {
+      return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", {
         className: "main-view"
       }, _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
         exact: true,
@@ -42693,7 +42689,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63564" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50612" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

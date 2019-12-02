@@ -88,7 +88,7 @@ export class MainView extends React.Component {
     if (!movies) return <div className="main-view"/>;
 
     return (
-      <BrowserRouter>
+      <Router>
       <div className="main-view">
         <Switch>
           <Route exact path="/" 
@@ -122,7 +122,7 @@ export class MainView extends React.Component {
     />
         </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
     );
   }
 }
