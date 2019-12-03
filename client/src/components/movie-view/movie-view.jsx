@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Spinner from 'react-bootstrap/Spinner';
+import Card from 'react-bootstrap/Card';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
@@ -29,13 +29,15 @@ export class MovieView extends React.Component {
     if (!movie) return null;
 
     return (
-      <Container> 
-        <Row>  
-        <Col xs={6} md={8}>   
-        <div className="movie-view">
+      
+        <Card style={{width: '60rem', height: '42rem', margin: '2rem' }}>
+        <Card.Body> 
+        <div className="movie-view">         
           <div className="movie-title">
+          <Card.Title>  
           <div className="label">Title:</div>
           <div className="value">{movie.Title}</div>
+          </Card.Title>
         </div>
         <div className="movie-description">
           <div className="label">Description:</div>
@@ -47,23 +49,25 @@ export class MovieView extends React.Component {
           <div className="value">{movie.Genre.Name}</div>
         </div>
         <Link to={`/genres/${movie.Genre.Name}`}>
-        <Button variant="link">Genre</Button>
+        <Button className="button-card">Genre</Button>
         </Link>
         <div className="movie-director">
           <div className="label">Director:</div>
           <div className="value">{movie.Director.Name}</div>
         </div>
+        <div>
         <Link to={`/directors/${movie.Director.Name}`}>
-        <Button variant="link">Director</Button>
+        <Button className="button-card">Director</Button>
         </Link>
-        <Link to={"/movies"}>
-          <Button className="primary" variant="link">Back to all Movies</Button>
+        </div>
+        <div>
+        <Link to={"/"}>
+          <Button className="button-card">Back to all Movies</Button>
           </Link>
-       </div>
-       </Col>
-       </Row>
-       </Container>
-
+          </div>
+          </div>
+       </Card.Body>
+       </Card>        
      );
   }
 }

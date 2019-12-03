@@ -16,6 +16,9 @@ loginForm {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.button-card {
+  margin-top: 5px;
+}
 .my-flix {
   color: steelblue;
 }

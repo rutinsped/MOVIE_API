@@ -17,6 +17,8 @@ import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { DirectorView } from '../director-view/director-view';
+import { GenreView } from '../genre-view/genre-view';
 
 export class MainView extends React.Component {
 
@@ -71,13 +73,13 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  goBack = () => {
-    this.setState({ 
-      selectedMovie: null 
+  onLogout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
     })
-  }
-
-
+   }
 
   render() {
     const { movies, user } = this.state;
@@ -88,6 +90,9 @@ export class MainView extends React.Component {
     return (
       <Router>
       <div className="main-view">
+      <Button className="logout" variant="info" onClick={() => this.onLogout()} >
+              Log out
+             </Button>
         <Switch>
           <Route exact path="/" 
           render={() => 
@@ -100,7 +105,8 @@ export class MainView extends React.Component {
           <Route exact path="/register" render={() => <RegistrationView />} />
           <Route path="/login" render={() => <LoginView />} />
           <Route path="/movies/:movieId" 
-          render={({match}) => <MovieView movie={movies.find(m => m._id === match.params.movieId)}/>}
+          render={({match}) => <MovieView movie={movies.find(m => m._id === match.params.movieId)}/>
+        }
         />
           <Route path="/directors/:name" 
           render={({ match }) =>
@@ -114,7 +120,7 @@ export class MainView extends React.Component {
            render={({ match }) => 
         {
           if (!movies) return <div className="main-view"/>;
-          return <GenreView director={movies.find(m => m.Genre.Name === match.params.name).Genre}/>
+          return <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre}/>
         }
       }     
     />

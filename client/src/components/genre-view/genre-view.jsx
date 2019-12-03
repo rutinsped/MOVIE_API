@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './genre-view.scss';
 import { Link } from "react-router-dom";
 
@@ -24,13 +23,16 @@ export class GenreView extends React.Component {
   render() {
     const { genre } = this.props;
 
+    if (!genre) return null;
+
     return (
       <Card style={{ width: '20rem', height: '40rem', margin: '2rem' }}>
         <Card.Body>
           <Card.Title>{genre.Name}</Card.Title>
           <Card.Text>{genre.Description}</Card.Text>
-          <Link to={`/`}></Link>
-          <Button className="primary" variant="link">Back</Button>
+          <Link to={`/`} >
+            <Button className="button-card" variant="info">Back</Button>
+          </Link>
         </Card.Body>
       </Card>
     );
