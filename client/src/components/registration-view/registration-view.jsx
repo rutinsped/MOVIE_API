@@ -61,7 +61,7 @@ export function RegistrationView(props) {
 
   <Form.Group controlId="formBasicEmail">
     <Form.Label>Email</Form.Label>
-    <Form.Control type="uemail" placeholder="Enter Email" value={email} onChange={e => setEmail(e.target.value)} />
+    <Form.Control type="useremail" placeholder="Enter Email" value={email} onChange={e => setEmail(e.target.value)} />
   </Form.Group>
 
   <Form.Group controlId="formBasicPassword">

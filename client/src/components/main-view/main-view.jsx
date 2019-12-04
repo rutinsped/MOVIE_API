@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -19,6 +20,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
 
 export class MainView extends React.Component {
 
@@ -27,7 +29,7 @@ export class MainView extends React.Component {
 
     this.state = {
       movies: [],
-      user: null
+      user: [],
     };
   }
 
@@ -46,6 +48,21 @@ export class MainView extends React.Component {
     });
   }
 
+  getUsers(token) {
+    axios.get('https://cinesider.herokuapp.com/users', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
+    .then(response => {
+      // Assign the result to the state
+      this.setState({
+        users: response.data
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
   if (accessToken !== null) {
@@ -53,6 +70,7 @@ export class MainView extends React.Component {
       user: localStorage.getItem('user')
     });
     this.getMovies(accessToken);
+    this.getUsers(accessToken);
   }
 }
 
@@ -90,9 +108,24 @@ export class MainView extends React.Component {
     return (
       <Router>
       <div className="main-view">
-      <Button className="logout" variant="info" onClick={() => this.onLogout()} >
+  <Navbar bg="light" expand="lg">
+  <Navbar.Brand href="#home">Cinesider</Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+    <Button className="logout" variant="info" onClick={() => this.onLogout()} >
               Log out
              </Button>
+      <NavDropdown title="User settings" id="basic-nav-dropdown">
+        <NavDropdown.Item href="/users/:userId">User profile</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Update user</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Delete user</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+      </NavDropdown>
+    </Nav>
+    </Navbar.Collapse>
+</Navbar>
         <Switch>
           <Route exact path="/" 
           render={() => 
@@ -103,10 +136,21 @@ export class MainView extends React.Component {
     }
   />
           <Route exact path="/register" render={() => <RegistrationView />} />
+
           <Route path="/login" render={() => <LoginView />} />
+
           <Route path="/movies/:movieId" 
-          render={({match}) => <MovieView movie={movies.find(m => m._id === match.params.movieId)}/>
+          render={({match}) => 
+          <MovieView movie={movies.find(m => m._id === match.params.movieId)}/>
         }
+        />
+        <Route path="/profile" 
+          render={({match}) =>
+          {
+            if (!users) return <div className="main-view"/>;   
+          return <ProfileView user={users.find(m => m.User.Username === match.params.username).User}/>
+        }
+      }
         />
           <Route path="/directors/:name" 
           render={({ match }) =>

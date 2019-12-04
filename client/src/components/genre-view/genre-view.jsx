@@ -26,7 +26,7 @@ export class GenreView extends React.Component {
     if (!genre) return null;
 
     return (
-      <Card style={{ width: '20rem', height: '40rem', margin: '2rem' }}>
+      <Card style={{ width: '40rem', height: '20rem', margin: '2rem' }}>
         <Card.Body>
           <Card.Title>{genre.Name}</Card.Title>
           <Card.Text>{genre.Description}</Card.Text>
