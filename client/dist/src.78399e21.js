@@ -48175,8 +48175,8 @@ function (_React$Component) {
           var match = _ref2.match;
           return _react.default.createElement(_profileView.ProfileView, {
             user: users.find(function (u) {
-              return u.username === match.params.u.username;
-            }).Username
+              return u.username === match.params.username;
+            })
           });
         }
       }), _react.default.createElement(_reactRouterDom.Route, {

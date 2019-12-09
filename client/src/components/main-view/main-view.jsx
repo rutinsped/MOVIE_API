@@ -146,7 +146,7 @@ export class MainView extends React.Component {
         />
         <Route path="users/:username" 
           render={({match}) =>
-          <ProfileView user={users.find(u => u.username === match.params.u.username).Username}/>
+          <ProfileView user={users.find(u => u.username === match.params.username)}/>
         }
         />
           <Route path="/directors/:name" 
