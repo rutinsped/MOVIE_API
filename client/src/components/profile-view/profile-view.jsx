@@ -24,6 +24,8 @@ export class ProfileView extends React.Component {
   render() {
     const { user } = this.props;
 
+    if (!user) return null;
+
     return (
       <Card style={{ width: '20rem', height: '40rem', margin: '2rem' }}>
         <Card.Body>

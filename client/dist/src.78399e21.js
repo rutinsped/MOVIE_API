@@ -47908,6 +47908,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var user = this.props.user;
+      if (!user) return null;
       return _react.default.createElement(_Card.default, {
         style: {
           width: '20rem',
@@ -48043,7 +48044,7 @@ function (_React$Component) {
       }).then(function (response) {
         // Assign the result to the state
         _this3.setState({
-          users: response.data
+          user: response.data
         });
       }).catch(function (error) {
         console.log(error);
@@ -48169,16 +48170,13 @@ function (_React$Component) {
           });
         }
       }), _react.default.createElement(_reactRouterDom.Route, {
-        path: "/profile",
+        path: "users/:username",
         render: function render(_ref2) {
           var match = _ref2.match;
-          if (!users) return _react.default.createElement("div", {
-            className: "main-view"
-          });
           return _react.default.createElement(_profileView.ProfileView, {
-            user: users.find(function (m) {
-              return m.User.Username === match.params.username;
-            }).User
+            user: users.find(function (u) {
+              return u.username === match.params.u.username;
+            }).Username
           });
         }
       }), _react.default.createElement(_reactRouterDom.Route, {
@@ -48307,7 +48305,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60107" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60658" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -55,7 +55,7 @@ export class MainView extends React.Component {
     .then(response => {
       // Assign the result to the state
       this.setState({
-        users: response.data
+        user: response.data
       });
     })
     .catch(function (error) {
@@ -144,13 +144,10 @@ export class MainView extends React.Component {
           <MovieView movie={movies.find(m => m._id === match.params.movieId)}/>
         }
         />
-        <Route path="/profile" 
+        <Route path="users/:username" 
           render={({match}) =>
-          {
-            if (!users) return <div className="main-view"/>;   
-          return <ProfileView user={users.find(m => m.User.Username === match.params.username).User}/>
+          <ProfileView user={users.find(u => u.username === match.params.u.username).Username}/>
         }
-      }
         />
           <Route path="/directors/:name" 
           render={({ match }) =>
