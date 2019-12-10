@@ -47908,6 +47908,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var user = this.props.user;
+      console.log(user);
       if (!user) return null;
       return _react.default.createElement(_Card.default, {
         style: {
@@ -48125,7 +48126,7 @@ function (_React$Component) {
         title: "User settings",
         id: "basic-nav-dropdown"
       }, _react.default.createElement(_NavDropdown.default.Item, {
-        href: "/users/:userId"
+        href: "/users/:username"
       }, "User profile"), _react.default.createElement(_NavDropdown.default.Item, {
         href: "#action/3.2"
       }, "Update user"), _react.default.createElement(_NavDropdown.default.Item, {
@@ -48175,7 +48176,7 @@ function (_React$Component) {
           var match = _ref2.match;
           return _react.default.createElement(_profileView.ProfileView, {
             user: users.find(function (u) {
-              return u._id === match.params.userId;
+              return username === match.params.userName;
             })
           });
         }
@@ -48305,7 +48306,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60658" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63982" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -117,7 +117,7 @@ export class MainView extends React.Component {
               Log out
              </Button>
       <NavDropdown title="User settings" id="basic-nav-dropdown">
-        <NavDropdown.Item href="/users/:userId">User profile</NavDropdown.Item>
+        <NavDropdown.Item href="/users/:username">User profile</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Update user</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Delete user</NavDropdown.Item>
         <NavDropdown.Divider />
@@ -146,7 +146,7 @@ export class MainView extends React.Component {
         />
         <Route path="users/:username" 
           render={({match}) =>
-          <ProfileView user={users.find(u => u._id === match.params.userId)}/>
+          <ProfileView user={users.find(u => username === match.params.userName)}/>
         }
         />
           <Route path="/directors/:name" 
